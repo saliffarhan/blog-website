@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slider_logo{
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+
+}
+
+.logo{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slide 25s linear infinite;
+
+  
+}
+
+.logo img{
+  width: 90%;
+  margin: 0 25px;
+
+
+}
+@keyframes slide {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(-130%);
+    background-repeat: repeat-x;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .logo img {
+    width: 70%; 
+    margin: 0 10px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 60%; 
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 40%; 
+    /* margin: 0 5px; */
+  }
+}
+
+
+
+
+
+
+
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #fd0101, #eb9a58, #fffb00, #00ffd5, #002bff, #7a00ff, #a33a8c, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1; /* Hover ke bina animation visible rakho */
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: #111; */
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
